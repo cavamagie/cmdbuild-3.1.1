@@ -1,3 +1,4 @@
+
 FROM tomcat:8.5.46-jdk8-openjdk
 
 MAINTAINER andrea cavaletti
@@ -28,8 +29,8 @@ COPY files/docker-entrypoint.sh /usr/local/bin/
 
 
 RUN set -x \
-	&& groupadd tomcat8 \
-	&& useradd -s /bin/false -g tomcat8 -d $CATALINA_HOME tomcat8 \
+	&& groupadd tomcat \
+	&& useradd -s /bin/false -g tomcat -d $CATALINA_HOME tomcat \
 	&& cd /tmp \
 	&& wget -O cmdbuild.war "$CMDBUILD_URL" \
 	&& chmod 777 cmdbuild.war \
@@ -38,7 +39,7 @@ RUN set -x \
 	&& mv cmdbuild.war $CATALINA_HOME/webapps/cmdbuild.war \
 	&& mv cmdbuild/* $CATALINA_HOME/webapps/cmdbuild/ \
 	&& chmod 777 $CATALINA_HOME/webapps/cmdbuild/cmdbuild.sh \
-	&& chown tomcat8 -R $CATALINA_HOME \
+	&& chown tomcat -R $CATALINA_HOME \
 	&& cd /tmp \
 	&& rm -rf * \
 	&& rm -rf /var/lib/apt/lists/*
@@ -48,7 +49,7 @@ RUN apt-get -qy autoremove
 
 ENTRYPOINT /usr/local/bin/docker-entrypoint.sh
 
-USER tomcat8
+USER tomcat
 
 EXPOSE 8080
 
