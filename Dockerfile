@@ -1,4 +1,4 @@
-FROM tomcat:8.5.42-jdk8-openjdk
+FROM tomcat:8.5.46-jdk8-openjdk
 
 MAINTAINER andrea cavaletti
 
