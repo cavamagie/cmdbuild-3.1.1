@@ -16,6 +16,7 @@ ENV CMDBUILD_DUMP demo
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
     maven \
+    postgis \
 	postgresql-client
 
 RUN set -x \
