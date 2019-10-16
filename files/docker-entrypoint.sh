@@ -34,5 +34,4 @@ echo "Init DB"
 #su tomcat
 
 #echo "RUN catalina"
-#disabilito per test
-#exec $CATALINA_HOME/bin/catalina.sh run
+exec $CATALINA_HOME/bin/catalina.sh run
