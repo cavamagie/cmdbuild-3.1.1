@@ -23,6 +23,7 @@ RUN set -x \
  	&& mkdir $CATALINA_HOME/conf/cmdbuild/ \
  	&& mkdir $CATALINA_HOME/webapps/cmdbuild/
 
+COPY files/postgresql-42.2.8.jar $CATALINA_HOME/lib/postgresql-42.2.8.jar
 COPY files/tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml
 COPY files/context.xml $CATALINA_HOME/webapps/manager/META-INF/context.xml
 COPY files/database.conf $CATALINA_HOME/conf/cmdbuild/database.conf
