@@ -17,7 +17,7 @@ while ! timeout 1 bash -c "echo > /dev/tcp/$POSTGRES_HOST/$POSTGRES_PORT"; do
   echo $POSTGRES_HOST
   echo $POSTGRES_PORT
   echo $POSTGRES_DB
-  
+  echo access error
   sleep 5
 done
 
