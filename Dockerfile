@@ -17,7 +17,8 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
     maven \
     postgis \
-	postgresql-client
+	postgresql-client\
+	libpostgresql-jdbc-java
 
 RUN set -x \
  	&& mkdir $CATALINA_HOME/conf/cmdbuild/ \
