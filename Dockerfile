@@ -14,11 +14,11 @@ ENV POSTGRES_DB cmdbuild_db31
 ENV CMDBUILD_DUMP demo
 
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
     maven \
     postgis \
-	postgresql-client\
-	libpostgresql-jdbc-java
+    postgresql-client\
+    libpostgresql-jdbc-java
 
 RUN set -x \
  	&& mkdir $CATALINA_HOME/conf/cmdbuild/ \
