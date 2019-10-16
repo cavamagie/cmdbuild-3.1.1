@@ -11,9 +11,13 @@ echo "Edit $CATALINA_HOME/conf/cmdbuild/database.conf"
     echo "db.admin.password=$POSTGRES_PASS"
 } >> $CATALINA_HOME/conf/cmdbuild/database.conf
 
-# first init DB, second start with fail
+# inizializzo e parto
 while ! timeout 1 bash -c "echo > /dev/tcp/$POSTGRES_HOST/$POSTGRES_PORT"; do   
   >&2 echo "Postgres is unavailable - sleeping" 
+  echo $POSTGRES_HOST
+  echo $POSTGRES_PORT
+  echo $POSTGRES_DB
+  
   sleep 5
 done
 
@@ -30,4 +34,5 @@ echo "Init DB"
 #su tomcat
 
 #echo "RUN catalina"
-exec $CATALINA_HOME/bin/catalina.sh run
+#disabilito per test
+#exec $CATALINA_HOME/bin/catalina.sh run
