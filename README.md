@@ -1,5 +1,4 @@
-# cmdbuild-3.1.1need to talk
-need to talk with a pg db 
+# cmdbuild-3.1.1 need to talk talk with a pg db 9.4-10
 
 
 * ENV POSTGRES_USER postgres
@@ -10,5 +9,6 @@ need to talk with a pg db
 * ENV CMDBUILD_DUMP demo
 
 
-docker run --name cmdbuild_db -p 5432:5432 -d itmicus/cmdbuild:db-3.0
-docker run --name cmdbuild-3.1.1 -d -p 8080:8080 -e POSTGRES_HOST='172.17.0.2' cavamagie/cmdbuild-3.1.1
+* docker run --name cmdbuild_db -p 5432:5432 -d itmicus/cmdbuild:db-3.0
+
+* docker run --name cmdbuild-3.1.1 -d -p 8080:8080 -e POSTGRES_HOST='172.17.0.2' cavamagie/cmdbuild-3.1.1
