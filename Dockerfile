@@ -16,6 +16,7 @@ ENV CMDBUILD_DUMP demo
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     wget \
+    unzip \
     maven \
     postgresql-client\
     libpostgresql-jdbc-java
