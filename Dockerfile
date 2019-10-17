@@ -1,5 +1,5 @@
 
-FROM tomcat:8.5.46-jdk8-openjdk
+FROM tomcat:8.5.46-jdk8-openjdk-slim
 
 MAINTAINER andrea cavaletti
 
@@ -16,7 +16,6 @@ ENV CMDBUILD_DUMP demo
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     maven \
-    postgis \
     postgresql-client\
     libpostgresql-jdbc-java
 
