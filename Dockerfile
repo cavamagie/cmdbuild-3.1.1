@@ -19,6 +19,7 @@ RUN apt-get update \
     unzip \
     maven \
     postgresql-client\
+    postgis \
     libpostgresql-jdbc-java
 
 RUN set -x \
