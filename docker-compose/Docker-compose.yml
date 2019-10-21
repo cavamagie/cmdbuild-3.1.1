@@ -14,6 +14,7 @@ services:
         environment:
             - POSTGRES_USER=postgres
             - POSTGRES_PASS=postgres
+            - POSTGRES_DB=cmdbuild_3
         restart: on-failure
         deploy:
           resources:
