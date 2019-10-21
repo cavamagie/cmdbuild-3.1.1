@@ -1,4 +1,4 @@
-version: "3.7"
+version: "2.4"
 volumes:
     cmdbuild-db:
     cmdbuild-tomcat:
@@ -15,14 +15,8 @@ services:
             - POSTGRES_USER=postgres
             - POSTGRES_PASS=postgres
         restart: on-failure
-        deploy:
-          resources:
-            limits:
-              cpus: '0.50'
-              memory: 1000M
-            reservations:
-              cpus: '0.25'
-              memory: 300m        
+        mem_limit: 1000m
+        mem_reservation: 300m
 
     cmdbuild_run:
         image: cavamagie/cmdbuild-3.1.1
@@ -44,9 +38,5 @@ services:
             - POSTGRES_DB=cmdbuild_3
             - CMDBUILD_DUMP=demo
             - JAVA_OPTS=-Xmx4000m -Xms2000m
-        deploy:
-          resources:
-            limits:
-              memory: 4000M
-            reservations:
-              memory: 2000m              
+        mem_limit: 4000m
+        mem_reservation: 2000m
