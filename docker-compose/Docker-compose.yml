@@ -42,7 +42,7 @@ services:
             - POSTGRES_PASS=postgres
             - POSTGRES_PORT=5432
             - POSTGRES_HOST=cmdbuild_db
-            - POSTGRES_DB=cmdbuild_3
+            - POSTGRES_DB=cmdbuild_31
             - CMDBUILD_DUMP=demo
             - JAVA_OPTS=-Xmx4000m -Xms2000m
         deploy:
